@@ -1,21 +1,21 @@
 ```json
 {
   "date": "2022.08.01 18:51",
-  "tags": ["php"]
+  "tags": ["php"],
+  "description":"记录一下在php开发中遇到的Bug"
 }
 ```
 
-记录一下在php开发中遇到的Bug
+### 2022/7/27收录
 
-1⃣️
+#### 1⃣️
 
+```php
+[0] InvalidArgumentException in Connection.php line 188
+未定义数据库类型
 ```
-# [0] InvalidArgumentException in Connection.php line 188
 
-## 未定义数据库类型
-```
-
-解决方式
+**解决方式**
 
 ```
 数据库加载的问题
@@ -27,13 +27,13 @@ protected function initialize(){
     
 ```
 
-2⃣️
+#### 2⃣️
 
 ```
 未定义数组索引: electric_account
 ```
 
-解决方式
+**解决方式**
 
 ```
 'list' => $list->toArray()['data']
@@ -41,31 +41,31 @@ protected function initialize(){
 缺少后续['data'],我也不知道为啥
 ```
 
-3⃣️
+#### 3⃣️
 
 ```
 前端输入框输入参数，where条件中不显示
 ```
 
-解决方式
+**解决方式**
 
 ```
 原来是逻辑函数中params参数不一致
 ```
 
-4⃣️
+### 2022/7/28收录
 
 ```
 后台测试过程中发现能够得到记录，但是搜索条件无法搜索出记录
 ```
 
-定位问题
+**定位问题**
 
 ```
 定位到问题，就是拉下列表中的条件出错，导致无法进行有效搜索
 ```
 
-解决方式
+**解决方式**
 
 ```
 看一下之前的代码，解决好该问题。
@@ -78,19 +78,21 @@ $this->assign("allStatus", ContractOrderLogic::$allStatus);
 $this->assign("allType", ContractOrderLogic::$allType);
 ```
 
-5⃣️
+### **2022/8/1收录**
+
+#### 1⃣️
 
 ```
 控制器不存在:app\admin\controller\PoolMiningControllerController
 ```
 
-解决方式
+**解决方式**
 
 ```
 在html页面内绑定的url上去掉controller
 ```
 
-6⃣️
+#### 2⃣️
 
 ```
 测试：
